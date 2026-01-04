@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio | 简约高级风</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <nav class="glass-nav">
+        <div class="logo">CREATIVE LOG</div>
+        <div class="nav-links">
+            <a href="#video">视频</a>
+            <a href="#design">平面</a>
+            <a href="#plans">策划</a>
+            <a href="#writing">文字</a>
+            <a href="mailto:yourname@email.com" class="contact-btn">联系我</a>
+        </div>
+    </nav>
+
+    <section id="video" class="container">
+        <h2 class="section-title">视频作品 <span>Video (7)</span></h2>
+        <div class="grid-video">
+            <div class="video-card">
+                <video controls poster="images/video-cover1.jpg" playsinline><source src="videos/work1.mp4" type="video/mp4"></video>
+                <div class="card-info"><h3>视频项目 01</h3><p>后期剪辑 / 视觉包装</p></div>
+            </div>
+            </div>
+    </section>
+
+    <section id="design" class="container">
+        <h2 class="section-title">平面设计 <span>Graphic (10)</span></h2>
+        <div class="grid-10">
+            <div class="card design-card">
+                <a href="images/design1_full.jpg" class="preview-link">
+                    <img src="images/design1_thumb.jpg" alt="设计">
+                    <div class="hover-mask">点击预览</div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="plans" class="container">
+        <h2 class="section-title">项目策划 <span>Plans (5)</span></h2>
+        <div class="grid-plans">
+            <a href="plans/plan1.pdf" target="_blank" class="plan-card">
+                <div class="plan-icon">PDF</div>
+                <div class="plan-info">
+                    <h3>2024 品牌营销全案策划</h3>
+                    <p>点击查阅高清 PDF 文档</p>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <section id="writing" class="container">
+        <h2 class="section-title">文字作品 <span>Writing (6)</span></h2>
+        <div class="writing-grid">
+            <div class="writing-card">
+                <div class="writing-tag">专栏</div>
+                <h3>文章标题示例</h3>
+                <p>这里是文章的简短摘要内容...</p>
+                <a href="#" class="read-more">阅读全文 →</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <a href="mailto:yourname@email.com" class="big-email">yourname@email.com</a>
+    </footer>
+
+    <div id="lightbox" class="lightbox">
+        <span class="close-btn">&times;</span>
+        <img class="lightbox-content" id="lightbox-img">
+    </div>
+
+    <script>
+        // 灯箱脚本逻辑同前，无需改动
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const closeBtn = document.querySelector('.close-btn');
+        document.querySelectorAll('.preview-link').forEach(link => {
+            link.onclick = (e) => { e.preventDefault(); lightbox.style.display = 'flex'; lightboxImg.src = link.href; };
+        });
+        closeBtn.onclick = () => { lightbox.style.display = 'none'; };
+        lightbox.onclick = (e) => { if(e.target !== lightboxImg) lightbox.style.display = 'none'; };
+    </script>
+</body>
+</html>
