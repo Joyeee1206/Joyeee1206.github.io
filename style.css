@@ -1,7 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
+
 :root {
     --mint: #AAF0D1;
     --bg: #F8FAFB;
-    --radius: 16px;
+    --radius: 20px;
 }
 
 /* 导航与全局同前... */
