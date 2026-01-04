@@ -1,0 +1,67 @@
+:root {
+    --mint: #AAF0D1;
+    --bg: #F8FAFB;
+    --radius: 16px;
+}
+
+/* 导航与全局同前... */
+
+/* 视频网格：2栏布局，适合长列表 */
+.grid-video {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(45%, 1fr));
+    gap: 30px;
+}
+
+/* 平面设计网格：由于有10张，采用3-4栏布局，更节省空间 */
+.grid-10 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+/* 策划案PDF卡片设计 */
+.grid-plans {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.plan-card {
+    background: white;
+    padding: 25px;
+    border-radius: var(--radius);
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    align-items: center;
+    border: 1px solid #EEE;
+    transition: 0.3s;
+}
+
+.plan-card:hover {
+    border-color: var(--mint);
+    background: #F0FFF9;
+    transform: translateY(-5px);
+}
+
+.plan-icon {
+    width: 60px;
+    height: 60px;
+    background: var(--mint);
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 800;
+    margin-right: 20px;
+}
+
+/* 文字与灯箱同前，已包含磨砂效果... */
+
+/* 移动端适配：手机上看时自动变为单栏 */
+@media (max-width: 768px) {
+    .grid-video, .grid-10, .grid-plans {
+        grid-template-columns: 1fr;
+    }
+}
